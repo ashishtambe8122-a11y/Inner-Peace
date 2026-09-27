@@ -1,0 +1,1834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Wellness Guide - Health, Finance, Spirituality & Books</title>
+    <style>
+        :root {
+            --color-health: #FF6B6B;
+            --color-finance: #4ECDC4;
+            --color-spirituality: #9D84B7;
+            --color-books: #FFD93D;
+            --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --text-dark: #1a1a1a;
+            --text-light: #555;
+            --white: #fff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: linear-gradient(90deg, #FF6B6B, #4ECDC4, #9D84B7, #FFD93D);
+            padding: 1.2rem 2rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        .navbar-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s;
+            background: rgba(255,255,255,0.2);
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.4);
+            transform: scale(1.05);
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 25%, #4ECDC4 50%, #9D84B7 75%, #FFD93D 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+            line-height: 1.2;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-weight: 500;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-health {
+            background: var(--color-health);
+            color: white;
+        }
+
+        .btn-finance {
+            background: var(--color-finance);
+            color: white;
+        }
+
+        .btn-spirituality {
+            background: var(--color-spirituality);
+            color: white;
+        }
+
+        .btn-books {
+            background: var(--color-books);
+            color: #333;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* SECTION STYLES */
+        .section {
+            padding: 4rem 0;
+            min-height: 100vh;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        #health .section-title {
+            color: var(--color-health);
+        }
+
+        #finance .section-title {
+            color: var(--color-finance);
+        }
+
+        #spirituality .section-title {
+            color: var(--color-spirituality);
+        }
+
+        #books .section-title {
+            color: var(--color-books);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .divider {
+            width: 100px;
+            height: 5px;
+            border-radius: 50px;
+            margin: 1rem auto;
+        }
+
+        #health .divider {
+            background: var(--color-health);
+        }
+
+        #finance .divider {
+            background: var(--color-finance);
+        }
+
+        #spirituality .divider {
+            background: var(--color-spirituality);
+        }
+
+        #books .divider {
+            background: var(--color-books);
+        }
+
+        /* CARDS */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border-top: 5px solid;
+            overflow: hidden;
+        }
+
+        #health .card {
+            border-top-color: var(--color-health);
+        }
+
+        #finance .card {
+            border-top-color: var(--color-finance);
+        }
+
+        #spirituality .card {
+            border-top-color: var(--color-spirituality);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        #health .card h3 {
+            color: var(--color-health);
+        }
+
+        #finance .card h3 {
+            color: var(--color-finance);
+        }
+
+        #spirituality .card h3 {
+            color: var(--color-spirituality);
+        }
+
+        .card p, .card li {
+            color: var(--text-light);
+            margin-bottom: 0.8rem;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card li {
+            padding-left: 1.8rem;
+            position: relative;
+        }
+
+        .card li:before {
+            content: "★";
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        #health .card li:before {
+            color: var(--color-health);
+        }
+
+        #finance .card li:before {
+            color: var(--color-finance);
+        }
+
+        #spirituality .card li:before {
+            color: var(--color-spirituality);
+        }
+
+        /* HIGHLIGHT BOX */
+        .highlight {
+            background: linear-gradient(135deg, rgba(255,107,107,0.1) 0%, rgba(78,205,196,0.1) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border-left: 5px solid;
+        }
+
+        #health .highlight {
+            border-left-color: var(--color-health);
+        }
+
+        #finance .highlight {
+            border-left-color: var(--color-finance);
+        }
+
+        #spirituality .highlight {
+            border-left-color: var(--color-spirituality);
+        }
+
+        .highlight h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        #health .highlight h4 {
+            color: var(--color-health);
+        }
+
+        #finance .highlight h4 {
+            color: var(--color-finance);
+        }
+
+        #spirituality .highlight h4 {
+            color: var(--color-spirituality);
+        }
+
+        /* STATS */
+        .statistics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-top: 5px solid;
+        }
+
+        #health .stat-box {
+            border-top-color: var(--color-health);
+        }
+
+        #finance .stat-box {
+            border-top-color: var(--color-finance);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        #health .stat-number {
+            color: var(--color-health);
+        }
+
+        #finance .stat-number {
+            color: var(--color-finance);
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* QUOTE */
+        .quote {
+            background: white;
+            border-left: 5px solid;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-style: italic;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        #health .quote {
+            border-left-color: var(--color-health);
+        }
+
+        #finance .quote {
+            border-left-color: var(--color-finance);
+        }
+
+        #spirituality .quote {
+            border-left-color: var(--color-spirituality);
+        }
+
+        .quote-author {
+            margin-top: 1rem;
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        /* TABLES */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th {
+            padding: 1.2rem;
+            text-align: left;
+            font-weight: 700;
+            color: white;
+            font-size: 1rem;
+        }
+
+        #health th {
+            background: var(--color-health);
+        }
+
+        #finance th {
+            background: var(--color-finance);
+        }
+
+        #spirituality th {
+            background: var(--color-spirituality);
+        }
+
+        td {
+            padding: 1.2rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        tr:hover {
+            background: #f9f9f9;
+        }
+
+        /* BOOKS SECTION */
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .book-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border-top: 5px solid;
+            position: relative;
+        }
+
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .book-category {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .book-health {
+            background: rgba(255, 107, 107, 0.2);
+            color: var(--color-health);
+        }
+
+        .book-finance {
+            background: rgba(78, 205, 196, 0.2);
+            color: var(--color-finance);
+        }
+
+        .book-spirituality {
+            background: rgba(157, 132, 183, 0.2);
+            color: var(--color-spirituality);
+        }
+
+        .book-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .book-author {
+            color: var(--text-light);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .book-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .book-card h3 {
+            color: var(--text-dark);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: linear-gradient(90deg, #FF6B6B, #4ECDC4, #9D84B7, #FFD93D);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 5rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .emoji {
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                gap: 0.8rem;
+            }
+
+            .nav-links a {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="logo">🌟 Wellness Guide</div>
+            <ul class="nav-links">
+                <li><a onclick="showSection('health')">💪 HEALTH</a></li>
+                <li><a onclick="showSection('finance')">💰 FINANCE</a></li>
+                <li><a onclick="showSection('spirituality')">🕉️ SPIRITUALITY</a></li>
+                <li><a onclick="showSection('books')">📚 BOOKS</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <h1>Your Complete Wellness Journey</h1>
+        <p>Health • Finance • Spirituality • Personal Growth</p>
+        <div class="hero-buttons">
+            <button class="btn btn-health" onclick="showSection('health')">💪 Explore Health</button>
+            <button class="btn btn-finance" onclick="showSection('finance')">💰 Learn Finance</button>
+            <button class="btn btn-spirituality" onclick="showSection('spirituality')">🕉️ Find Peace</button>
+            <button class="btn btn-books" onclick="showSection('books')">📚 Read Books</button>
+        </div>
+    </div>
+
+    <!-- ===================== HEALTH SECTION ===================== -->
+    <div id="health" class="section active">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"><span class="emoji">💪</span>COMPLETE HEALTH GUIDE</h2>
+                <p class="section-subtitle">Build a foundation for lifelong wellness and vitality</p>
+                <div class="divider"></div>
+            </div>
+
+            <div class="highlight">
+                <h4>Why Health Comes First?</h4>
+                <p>Health is the foundation of happiness, productivity, and financial security. A healthy body and mind enable you to pursue dreams, care for loved ones, and live meaningfully. Investing in health today prevents costly medical expenses and suffering tomorrow.</p>
+            </div>
+
+            <h3 style="font-size: 2rem; color: #FF6B6B; margin: 2rem 0; font-weight: 700;">🚨 Heart Disease Crisis in India</h3>
+            
+            <div class="statistics">
+                <div class="stat-box">
+                    <div class="stat-number">50%</div>
+                    <div class="stat-label">Higher heart attack risk compared to Western countries</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">30%</div>
+                    <div class="stat-label">Heart attacks in people under 50 years</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">75M</div>
+                    <div class="stat-label">Diabetics in India (highest after China)</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">60%</div>
+                    <div class="stat-label">Increase in premature deaths (1990-2020)</div>
+                </div>
+            </div>
+
+            <h3 style="font-size: 2rem; color: #FF6B6B; margin: 2.5rem 0; font-weight: 700;">⚡ Why Are Heart Attacks Rising in India?</h3>
+
+            <div class="content-grid">
+                <div class="card">
+                    <h3>🏙️ Urbanization & Lifestyle</h3>
+                    <ul>
+                        <li>Sedentary jobs (sitting 8-10 hours daily)</li>
+                        <li>Long commutes and traffic stress</li>
+                        <li>Work-life imbalance</li>
+                        <li>Constant pressure and deadlines</li>
+                        <li>Less physical activity and outdoor time</li>
+                        <li>Reduced social interaction</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>🍔 Dietary Changes</h3>
+                    <ul>
+                        <li>Shift to processed and fast foods</li>
+                        <li>Refined carbs instead of whole grains</li>
+                        <li>Trans fats in bakery items</li>
+                        <li>Excessive salt in processed foods</li>
+                        <li>Sugar-laden drinks and desserts</li>
+                        <li>Less fruits and vegetables intake</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>🧬 Genetic & Environmental</h3>
+                    <ul>
+                        <li>Indians have genetic predisposition</li>
+                        <li>Severe air pollution in major cities</li>
+                        <li>Limited awareness of risk factors</li>
+                        <li>High out-of-pocket health costs</li>
+                        <li>Delayed diagnosis and treatment</li>
+                        <li>Preventive care is minimal</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>🏥 Medical Risk Factors</h3>
+                    <ul>
+                        <li>Uncontrolled hypertension (50% unaware)</li>
+                        <li>Undiagnosed diabetes</li>
+                        <li>High cholesterol ignored</li>
+                        <li>Obesity rising (especially in urban areas)</li>
+                        <li>Metabolic syndrome increasing</li>
+                        <li>Poor medication compliance</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>😟 Stress & Mental Health</h3>
+                    <ul>
+                        <li>Work pressure and competition</li>
+                        <li>Financial anxiety and debt stress</li>
+                        <li>Relationship and family conflicts</li>
+                        <li>Sleep deprivation (5-6 hours average)</li>
+                        <li>Rising depression and anxiety</li>
+                        <li>Lack of stress management tools</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>🚬 Harmful Substance Use</h3>
+                    <ul>
+                        <li>Widespread smoking (30% of men)</li>
+                        <li>Tobacco chewing and paan use</li>
+                        <li>Excessive alcohol consumption</li>
+                        <li>Increasing drug abuse</li>
+                        <li>Energy drinks addiction</li>
+                        <li>Limited control and regulation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="font-size: 2rem; color: #FF6B6B; margin: 2.5rem 0; font-weight: 700;">❌ What to Absolutely AVOID</h3>
+
+            <div class="content-grid">
+                <div class="card">
+                    <h3>Dangerous Foods</h3>
+                    <ul>
+                        <li>Trans fats & refined oils</li>
+                        <li>Processed meats (bacon, sausage)</li>
+                        <li>Sugary drinks & sodas</li>
+                        <li>White bread & refined flour</li>
+                        <li>Pastries & baked desserts</li>
+                        <li>High-sodium instant noodles</li>
+                        <li>Fried foods and street junk food</li>
+                        <li>Fast food chains regularly</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Harmful Habits</h3>
+                    <ul>
+                        <li>Smoking (even occasional)</li>
+                        <li>Passive smoke exposure</li>
+                        <li>Excessive alcohol (>2 units/day)</li>
+                        <li>Tobacco chewing</li>
+                        <li>Betel nut (paan) regularly</li>
+                        <li>Staying awake past 11 PM</li>
+                        <li>Sitting continuously for hours</li>
+                        <li>Chronic stress without relief</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Environmental Risk</h3>
+                    <ul>
+                        <li>Breathing polluted air daily</li>
+                        <li>Sleeping less than 6 hours</li>
+                        <li>Skipping health check-ups</li>
+                        <li>Ignoring warning symptoms</li>
+                        <li>Taking medications incorrectly</li>
+                        <li>Excessive screen time (>6 hrs)</li>
+                        <li>Social isolation</li>
+                        <li>Constant noise pollution</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="font-size: 2rem; color: #FF6B6B; margin: 2.5rem 0; font-weight: 700;">✅ Complete Prevention Action Plan</h3>
+
+            <div class="content-grid">
+                <div class="card">
+                    <h3>1️⃣ Daily Exercise (Essential)</h3>
+                    <p><strong>Target: 150 min moderate activity weekly</strong></p>
+                    <ul>
+                        <li>Brisk walking 30-45 min daily</li>
+                        <li>Swimming 3x weekly (30 min)</li>
+                        <li>Cycling or running regularly</li>
+                        <li>Yoga 20-30 min daily</li>
+                        <li>Strength training 2x weekly</li>
+                        <li>Dance or sports for enjoyment</li>
+                        <li>Break sitting every 1 hour</li>
+                        <li>Aim for 10,000 steps daily</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>2️⃣ Heart-Smart Diet</h3>
+                    <p><strong>Focus on whole, unprocessed foods</strong></p>
+                    <ul>
+                        <li>Leafy greens daily (spinach, kale)</li>
+                        <li>Fatty fish 2x weekly (sardines, mackerel)</li>
+                        <li>Nuts & seeds (almonds, walnuts)</li>
+                        <li>Whole grains (brown rice, oats)</li>
+                        <li>Berries & citrus fruits daily</li>
+                        <li>Beans, lentils, chickpeas</li>
+                        <li>Olive oil (cold-pressed)</li>
+                        <li>Limit salt to 5g daily</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>3️⃣ Monitor Blood Pressure & Cholesterol</h3>
+                    <p><strong>Regular monitoring is critical</strong></p>
+                    <ul>
+                        <li>Check BP monthly (target: 120/80)</li>
+                        <li>Lipid profile annually</li>
+                        <li>Reduce salt significantly</li>
+                        <li>Manage weight (BMI: 18.5-24.9)</li>
+                        <li>Take medications as prescribed</li>
+                        <li>Avoid skipping doses</li>
+                        <li>Regular doctor consultations</li>
+                        <li>Track your metrics diligently</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>4️⃣ Stress & Sleep Management</h3>
+                    <p><strong>Mental health = Physical health</strong></p>
+                    <ul>
+                        <li>Sleep 7-8 hours nightly (crucial)</li>
+                        <li>Meditate 10-20 min daily</li>
+                        <li>Deep breathing exercises</li>
+                        <li>No screens 1 hour before bed</li>
+                        <li>Limit caffeine after 2 PM</li>
+                        <li>Regular meditation practice</li>
+                        <li>Maintain strong relationships</li>
+                        <li>Practice gratitude daily</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>5️⃣ Regular Health Check-ups</h3>
+                    <p><strong>Early detection saves lives</strong></p>
+                    <ul>
+                        <li>Annual health screening (all ages)</li>
+                        <li>ECG after 40 years</li>
+                        <li>Stress test if family history</li>
+                        <li>Blood sugar testing (fasting)</li>
+                        <li>Complete blood count annually</li>
+                        <li>Lipid profile yearly</li>
+                        <li>Thyroid check if needed</li>
+                        <li>Discuss risk factors with doctor</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>6️⃣ Eliminate Harmful Substances</h3>
+                    <p><strong>Complete elimination for best results</strong></p>
+                    <ul>
+                        <li>Quit smoking completely</li>
+                        <li>Alcohol maximum 1 unit daily</li>
+                        <li>Avoid tobacco in any form</li>
+                        <li>No recreational drugs</li>
+                        <li>Minimize energy drinks</li>
+                        <li>Avoid sugary beverages</li>
+                        <li>Choose natural over artificial</li>
+                        <li>Read food labels carefully</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="quote">
+                "Your body is a temple, but only if you treat it right. The best investment you'll ever make is in your health. Take care of it today, enjoy it forever."
+                <div class="quote-author">— Health Wisdom</div>
+            </div>
+
+            <h3 style="font-size: 1.8rem; color: #FF6B6B; margin: 2rem 0; font-weight: 700;">📊 Health Checklist for Tomorrow</h3>
+
+            <div class="highlight">
+                <h4>Start With These 5 Actions This Week:</h4>
+                <ul style="font-size: 1.05rem; line-height: 2;">
+                    <li><strong>✅ Get your baseline checked:</strong> BP, blood sugar, cholesterol (today if possible)</li>
+                    <li><strong>✅ Schedule 30-min walk daily:</strong> Morning or evening, consistency matters</li>
+                    <li><strong>✅ Eliminate one harmful food:</strong> Cut sugary drinks this week</li>
+                    <li><strong>✅ Set sleep target:</strong> 7-8 hours by maintaining consistent bedtime</li>
+                    <li><strong>✅ Find a stress relief:</strong> Meditation, yoga, or therapy appointment</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== FINANCE SECTION ===================== -->
+    <div id="finance" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"><span class="emoji">💰</span>COMPLETE FINANCE GUIDE</h2>
+                <p class="section-subtitle">Master money management and build lasting wealth</p>
+                <div class="divider"></div>
+            </div>
+
+            <div class="highlight">
+                <h4>Why Financial Literacy Matters?</h4>
+                <p>Financial freedom isn't about being rich—it's about having choices. When you understand money, you can handle emergencies, invest wisely, retire comfortably, and live with less stress. Financial security is the foundation for pursuing your dreams and living without fear.</p>
+            </div>
+
+            <h3 style="font-size: 2rem; color: #4ECDC4; margin: 2rem 0; font-weight: 700;">🏗️ The 5 Pillars of Financial Health</h3>
+
+            <div class="content-grid">
+                <div class="card">
+                    <h3>1️⃣ Income & Career Growth</h3>
+                    <ul>
+                        <li>Build valuable, in-demand skills</li>
+                        <li>Increase your earning potential</li>
+                        <li>Continuous learning and upskilling</li>
+                        <li>Negotiate better salaries aggressively</li>
+                        <li>Create multiple income streams</li>
+                        <li>Side hustles and passive income</li>
+                        <li>Career planning every 2-3 years</li>
+                        <li>Track your salary growth</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>2️⃣ Smart Spending</h3>
+                    <ul>
+                        <li>Track EVERY rupee spent</li>
+                        <li>Budget using 50/30/20 rule</li>
+                        <li>Cut unnecessary expenses ruthlessly</li>
+                        <li>Avoid impulse buying completely</li>
+                        <li>Use budgeting apps (YNAB, Goodbudget)</li>
+                        <li>Negotiate bills monthly</li>
+                        <li>Buy on need, not on want</li>
+                        <li>Review spending monthly</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>3️⃣ Emergency Fund (Critical)</h3>
+                    <ul>
+                        <li>Save 6-12 months of expenses</li>
+                        <li>High-interest savings account</li>
+                        <li>Separate from regular account</li>
+                        <li>Medical emergencies covered</li>
+                        <li>Job loss protection</li>
+                        <li>Build gradually and consistently</li>
+                        <li>Don't touch for non-emergencies</li>
+                        <li>Review and replenish annually</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>4️⃣ Debt Management</h3>
+                    <ul>
+                        <li>Avoid bad debt completely</li>
+                        <li>Pay credit card bills in full</li>
+                        <li>Never use debt for consumption</li>
+                        <li>Good debt (home/education) only</li>
+                        <li>Debt-to-income ratio under 30%</li>
+                        <li>Plan debt payoff strategy</li>
+                        <li>Consolidate high-interest debt</li>
+                        <li>Build good credit score</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>5️⃣ Wealth Building</h3>
+                    <ul>
+                        <li>Invest consistently every month</li>
+                        <li>Start with SIP (minimum ₹500)</li>
+                        <li>Diversify across asset classes</li>
+                        <li>Long-term perspective (10+ years)</li>
+                        <li>Use compound interest power</li>
+                        <li>Automate investments</li>
+                        <li>Review portfolio annually</li>
+                        <li>Stay disciplined in downturns</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>6️⃣ Insurance Protection</h3>
+                    <ul>
+                        <li>Term life insurance (critical)</li>
+                        <li>Health insurance (family cover)</li>
+                        <li>Auto insurance (mandatory)</li>
+                        <li>Home insurance (if homeowner)</li>
+                        <li>Disability insurance recommended</li>
+                        <li>Review coverage annually</li>
+                        <li>Adequate coverage (10x income)</li>
+                        <li>Don't skip this protection</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="font-size: 2rem; color: #4ECDC4; margin: 2.5rem 0; font-weight: 700;">🎯 Good Debt vs Bad Debt</h3>
+
+            <div class="content-grid">
+                <div class="card">
+                    <h3>✅ GOOD DEBT (Investment)</h3>
+                    <ul>
+                        <li>🏠 Home loan (builds equity)</li>
+                        <li>🎓 Education loan (increases income)</li>
+                        <li>🚀 Business loans (for growth)</li>
+                        <li>📈 Investment loans (if ROI > interest)</li>
+                        <li>🌳 Agricultural/land loans</li>
+                        <li>💼 Loans for skill development</li>
+                    </ul>
+                    <p style="margin-top: 1rem; background: rgba(78,205,196,0.2); padding: 1rem; border-radius: 8px; color: #333; font-weight: 600;">Key: Returns must exceed interest rate</p>
+                </div>
+
+                <div class="card">
+                    <h3>❌ BAD DEBT (Consumption)</h3>
+                    <ul>
+                        <li>💳 Credit card debt (35-50% interest!)</li>
+                        <li>🚗 Car loans for personal use</li>
+                        <li>🛋️ Consumer loans (gadgets, furniture)</li>
+                        <li>✈️ Travel loans and vacation loans</li>
+                        <li>⚡ High-interest personal loans</li>
+                        <li>💸 Payday loans and emergency loans</li>
+                    </ul>
+                    <p style="margin-top: 1rem; background: rgba(255,107,107,0.2); padding: 1rem; border-radius: 8px; color: #333; font-weight: 600;">Key: AVOID completely. Never borrow to consume.</p>
+                </div>
+
+                <div class="card">
+                    <h3>🔧 How to Handle Existing Debt</h3>
+                    <ol style="padding-left: 1.5rem;">
+                        <li>List ALL debts with interest rates</li>
+                        <li>Pay minimums on all debts</li>
+                        <li>Attack highest-rate debt first</li>
+                        <li>Increase income dramatically</li>
+                        <li>Cut expenses to minimum level</li>
+                        <li>Consider debt consolidation</li>
+                        <li>Celebrate small wins loudly</li>
+                        <li>Become debt-free in 2-5 years</li>
+                    </ol>
+                </div>
+            </div>
+
+            <h3 style="font-size: 2rem; color: #4ECDC4; margin: 2.5rem 0; font-weight: 700;">📊 Investment Instruments - Complete Details</h3>
+
+            <div class="table-responsive">
+                <table>
+                    <tr>
+                        <th>Instrument</th>
+                        <th>Risk</th>
+                        <th>Returns</th>
+                        <th>Time Horizon</th>
+                        <th>Best For</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Savings Account</strong></td>
+                        <td>None</td>
+                        <td>2-4% p.a.</td>
+                        <td>Short-term</td>
+                        <td>Emergency fund, liquid needs</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fixed Deposit (FD)</strong></td>
+                        <td>Very Low</td>
+                        <td>6-8% p.a.</td>
+                        <td>3-5 years</td>
+                        <td>Safe, guaranteed returns, DICGC protected (₹5L)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Recurring Deposit (RD)</strong></td>
+                        <td>Very Low</td>
+                        <td>6-8% p.a.</td>
+                        <td>3-5 years</td>
+                        <td>Monthly savings, disciplined investing, guaranteed</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Government Bonds</strong></td>
+                        <td>Low</td>
+                        <td>6-8% p.a.</td>
+                        <td>5-10 years</td>
+                        <td>Very safe, income generation, no credit risk</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mutual Funds (MF)</strong></td>
+                        <td>Medium</td>
+                        <td>10-15% p.a.</td>
+                        <td>5-10+ years</td>
+                        <td>Diversified, professional management, liquid</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SIP (Systematic Investment Plan)</strong></td>
+                        <td>Medium</td>
+                        <td>12-18% p.a.</td>
+                        <td>10+ years</td>
+                        <td>Monthly investing, rupee-cost averaging, beginner-friendly</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Stocks (Direct)</strong></td>
+                        <td>High</td>
+                        <td>15-25%+ p.a.</td>
+                        <td>5+ years</td>
+                        <td>High growth, requires research, long-term</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Index Funds</strong></td>
+                        <td>Medium</td>
+                        <td>12-14% p.a.</td>
+                        <td>10+ years</td>
+                        <td>Low fees, passive income, proven returns</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gold/Silver</strong></td>
+                        <td>Medium</td>
+                        <td>6-8% p.a.</td>
+                        <td>Long-term</td>
+                        <td>Inflation hedge, portfolio diversification, insurance</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Real Estate</strong></td>
+                        <td>Medium-High</td>
+                        <td>7-12% p.a.</td>
+                        <td>10+ years</td>
+                        <td>Leverage possible, rental income, tangible asset</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h3 style="font-size: 2rem; color: #4ECDC4; margin: 2.5rem 0; font-weight: 700;">⭐ SIP - The Wealth Builder</h3>
+
+            <div class="content-grid">
+                <div class="card">
+                    <h3>What is SIP?</h3>
+                    <p><strong>Systematic Investment Plan = Monthly Money Magic 💫</strong></p>
+                    <p>Invest a fixed amount (₹500-50,000+) into mutual funds every month automatically. The power is in consistency and rupee-cost averaging (buying more units when price is low, fewer when high).</p>
+                    <ul>
+                        <li>✅ Automatic monthly deduction</li>
+                        <li>✅ Builds discipline naturally</li>
+                        <li>✅ Rupee-cost averaging benefit</li>
+                        <li>✅ Long-term wealth creation</li>
+                        <li>✅ Beginner-friendly and simple</li>
+                        <li>✅ Can pause/stop anytime</li>
+                        <li>✅ Starts with just ₹500!</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>SIP Returns Example</h3>
+                    <p><strong>Invest ₹10,000 monthly at 12% annual return:</strong></p>
+                    <div style="background: #f0f0f0; padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                        <p><strong>5 years:</strong> ₹80 lakhs (invested ₹6 lakhs)</p>
+                        <p><strong>10 years:</strong> ₹2.3 crore (invested ₹12 lakhs)</p>
+                        <p><strong>20 years:</strong> ₹9 crore (invested ₹24 lakhs)</p>
+                        <p><strong>30 years:</strong> ₹1.5+ crore (invested ₹36 lakhs)</p>
+                    </div>
+                    <p style="font-size: 0.95rem; color: #4ECDC4; font-weight: 700;">🚀 That's the POWER OF COMPOUNDING!</p>
+                </div>
+
+                <div class="card">
+                    <h3>How to Start SIP Today</h3>
+                    <ol style="padding-left: 1.5rem;">
+                        <li><strong>Open demat account</strong> (free with brokerage)</li>
+                        <li><strong>KYC verification</strong> (online, 2 mins)</li>
+                        <li><strong>Link bank account</strong> (for auto-debit)</li>
+                        <li><strong>Choose mutual funds</strong> (diversified index funds recommended)</li>
+                        <li><strong>Set up SIP amount</strong> (₹500-10,000/month)</li>
+                        <li><strong>Select date</strong> (1st or 15th of month)</li>
+                        <li><strong>Invest consistently</strong> (ignore market volatility)</li>
+                        <li><strong>Review annually</strong> (rebalance if needed)</li>
+                    </ol>
+                </div>
+            </div>
+
+            <h3 style="font-size: 2rem; color: #4ECDC4; margin: 2.5rem 0; font-weight: 700;">🛡️ Insurance - Your Financial Safety Net</h3>
+
+            <div class="content-grid">
+                <div class="card">
+                    <h3>🔥 Term Life Insurance (CRITICAL!)</h3>
+                    <p><strong>Buy THIS FIRST. It's cheap and protects everything.</strong></p>
+                    <ul>
+                        <li>Pure protection, NO investment part</li>
+                        <li>Cheapest form of life insurance</li>
+                        <li>Coverage: 5-10x annual income</li>
+                        <li>Cost: ₹500-1000/month for ₹50 lakh</li>
+                        <li>Buy at 25-30, lock in lowest rates</li>
+                        <li>Family gets payout if you die</li>
+                        <li>No cash value, no surrender</li>
+                        <li>Simple, transparent, affordable</li>
+                    </ul>
+                    <p style="margin-top: 1rem; background: rgba(78,205,196,0.2); padding: 1rem; border-radius: 8px; color: #333; font-weight: 600;">💡 Rule: Get 10x your annual salary as coverage immediately!</p>
+                </div>
+
+                <div class="card">
+                    <h3>🏥 Health Insurance Essentials</h3>
+                    <ul>
+                        <li>Family floater: ₹5-10 lakh cover</li>
+                        <li>Covers hospitalization & surgeries</li>
+                        <li>OPD coverage increasingly important</li>
+                        <li>Critical illness rider recommended</li>
+                        <li>No-claim bonus increases cover yearly</li>
+                        <li>Cashless treatment at network hospitals</li>
+                        <li>Pre-existing coverage after waiting period</li>
+                        <li>Review plans annually for better deals</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Other Insurance Types</h3>
+                    <ul>
+                        <li>🚗 Auto Insurance (mandatory by law)</li>
+                        <li>🏠 Home Insurance (if homeowner)</li>
+                        <li>👔 Disability Insurance (income protection)</li>
+                        <li>✈️ Travel Insurance (for international trips)</li>
+                        <li>💼 Professional Indemnity (if self-employed)</li>
+                        <li>🌾 Crop Insurance (if farmer)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="quote">
+                "Wealth is not about earning more. It's about keeping what you earn, investing wisely, and letting compound interest work for decades. Master the basics, stay disciplined, and you will be rich."
+                <div class="quote-author">— Financial Wisdom</div>
+            </div>
+
+            <h3 style="font-size: 1.8rem; color: #4ECDC4; margin: 2rem 0; font-weight: 700;">💪 Your 90-Day Money Challenge</h3>
+
+            <div class="highlight">
+                <h4>Transform Your Finances in 3 Months:</h4>
+                <ul style="font-size: 1.05rem; line-height: 2;">
+                    <li><strong>Month 1:</strong> Track all spending, find ₹5000/month savings, get financial check-up</li>
+                    <li><strong>Month 2:</strong> Start emergency fund (₹50,000), buy term insurance, open demat account</li>
+                    <li><strong>Month 3:</strong> Start SIP (₹5000/month), review debt, create wealth plan</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== SPIRITUALITY SECTION ===================== -->
+    <div id="spirituality" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"><span class="emoji">🕉️</span>SPIRITUALITY & INNER PEACE</h2>
+                <p class="section-subtitle">Buddha's wisdom for modern consciousness and liberation</p>
+                <div class="divider"></div>
+            </div>
+
+            <div class="highlight">
+                <h4>Why Spirituality Matters in Modern Life?</h4>
+                <p>Spirituality isn't about religion—it's about understanding yourself, finding meaning, reducing suffering, and living with intention. The wealthiest and healthiest people practice meditation and spiritual disciplines. Inner peace enables clarity, better decisions, and authentic happiness that money can't buy.</p>
+            </div>
+
+            <h3 style="font-size: 2rem; color: #9D84B7; margin: 2rem 0; font-weight: 700;">📜 The Four Noble Truths - Foundation of Buddhism</h3>
+
+            <div class="content-grid">
+                <div class="card">
+                    <h3>1️⃣ Dukkha (Suffering Exists)</h3>
+                    <p><strong>Truth #1: Life contains suffering and unsatisfactoriness</strong></p>
+                    <ul>
+                        <li>Physical pain (illness, aging, death)</li>
+                        <li>Mental suffering (anxiety, grief, loneliness)</li>
+                        <li>Suffering of change (happiness doesn't last)</li>
+                        <li>Subtle unsatisfactoriness in existence</li>
+                        <li>Never-ending craving and wanting</li>
+                        <li>Impermanence of all things</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-style: italic; color: #9D84B7; font-weight: 600;">"Life is dukkha" is not pessimism—it's honest observation and clarity.</p>
+                </div>
+
+                <div class="card">
+                    <h3>2️⃣ Samudaya (Cause of Suffering)</h3>
+                    <p><strong>Truth #2: Suffering arises from craving and attachment</strong></p>
+                    <ul>
+                        <li>Craving for pleasure (wanting more)</li>
+                        <li>Craving for existence (ego clinging)</li>
+                        <li>Craving for non-existence (escape)</li>
+                        <li>Attachment to possessions and people</li>
+                        <li>False identification with ego</li>
+                        <li>Ignorance of true nature of reality</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-style: italic; color: #9D84B7; font-weight: 600;">We suffer not from what happens, but from wanting things to be different.</p>
+                </div>
+
+                <div class="card">
+                    <h3>3️⃣ Nirvana (End of Suffering)</h3>
+                    <p><strong>Truth #3: Suffering CAN be ended through liberation</strong></p>
+                    <ul>
+                        <li>Let go of craving and attachment</li>
+                        <li>Release the illusion of ego</li>
+                        <li>Develop wisdom and compassion</li>
+                        <li>Reach Nirvana (peace, freedom, liberation)</li>
+                        <li>Not a religious heaven—cessation of suffering</li>
+                        <li>Attainable in this lifetime, for anyone</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-style: italic; color: #9D84B7; font-weight: 600;">This is the ultimate hope—suffering can end right now, today!</p>
+                </div>
+
+                <div class="card">
+                    <h3>4️⃣ Magga (The Path)</h3>
+                    <p><strong>Truth #4: The Eightfold Path to liberation</strong></p>
+                    <ol style="padding-left: 1.5rem; font-size: 0.95rem;">
+                        <li><strong>Right View</strong> - Understand reality, Four Noble Truths</li>
+                        <li><strong>Right Intention</strong> - Renunciation, goodwill, harmlessness</li>
+                        <li><strong>Right Speech</strong> - Truthful, non-harmful, meaningful words</li>
+                        <li><strong>Right Action</strong> - Ethical conduct, harm to no one</li>
+                        <li><strong>Right Livelihood</strong> - Earn honestly, no harm to others</li>
+                        <li><strong>Right Effort</strong> - Cultivate good, abandon bad habits</li>
+                        <li><strong>Right Mindfulness</strong> - Present moment awareness (meditation)</li>
+                        <li><strong>Right Concentration</strong> - Deep meditation, mental stability</li>
+                    </ol>
+                </div>
+            </div>
+
+            <h3 style="font-size: 2rem; color: #9D84B7; margin: 2.5rem 0; font-weight: 700;">🧘 Vipassana Meditation - The Core Practice</h3>
+
+            <div class="content-grid">
+                <div class="card">
+                    <h3>What is Vipassana?</h3>
+                    <p><strong>"Clear seeing" or "insight meditation"</strong></p>
+                    <p>Vipassana is the meditation technique taught by Buddha that observes reality as it truly is—impermanent, unsatisfactory, and without a permanent self. Through direct experience (not just thinking), you understand the nature of mind and reality.</p>
+                    <ul>
+                        <li>Direct insight into reality</li>
+                        <li>Observes mind and body without judgment</li>
+                        <li>Experiences impermanence directly</li>
+                        <li>Reduces reactivity and suffering</li>
+                        <li>Ancient, time-tested technique</li>
+                        <li>Non-religious, scientific</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Benefits of Vipassana Practice</h3>
+                    <ul>
+                        <li>🧠 Mental clarity and laser focus</li>
+                        <li>😌 Anxiety and depression reduce</li>
+                        <li>🎯 Better decision-making ability</li>
+                        <li>❤️ Increased compassion and empathy</li>
+                        <li>😤 Stress and anger management improves</li>
+                        <li>🌟 Reduced reactivity, more awareness</li>
+                        <li>😴 Better sleep quality naturally</li>
+                        <li>🧬 Rewires brain (neuroplasticity proven)</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>How to Practice Vipassana</h3>
+                    <p><strong>Step-by-step for beginners:</strong></p>
+                    <ol style="padding-left: 1.5rem;">
+                        <li>Sit comfortably, spine straight, alert</li>
+                        <li>Close eyes to minimize distractions</li>
+                        <li>Observe breath naturally (no control)</li>
+                        <li>Notice all sensations on skin</li>
+                        <li>Don't judge or resist sensations</li>
+                        <li>Return attention when mind wanders</li>
+                        <li>Observe impermanence of all sensations</li>
+                        <li>Expand awareness to whole body</li>
+                    </ol>
+                </div>
+
+                <div class="card">
+                    <h3>The 10-Day Vipassana Retreat</h3>
+                    <p><strong>Intensive meditation experience (Dhamma centers)</strong></p>
+                    <ul>
+                        <li>10 hours of meditation daily</li>
+                        <li>Noble silence (no talking to others)</li>
+                        <li>Vegetarian meals twice daily</li>
+                        <li>No phones, books, writing, distractions</li>
+                        <li>Guided instructions by teacher</li>
+                        <li>Dhamma lectures in evenings</li>
+                        <li>Usually FREE (donations accepted)</li>
+                        <li>Profoundly transformative experience</li>
+                    </ul>
+                    <p style="margin-top: 1rem; background: rgba(157,132,183,0.2); padding: 1rem; border-radius: 8px; color: #333; font-weight: 600;">💜 Serious commitment = Life-changing transformation</p>
+                </div>
+            </div>
+
+            <h3 style="font-size: 2rem; color: #9D84B7; margin: 2.5rem 0; font-weight: 700;">⚡ The Three Marks of Existence</h3>
+
+            <div class="content-grid">
+                <div class="card">
+                    <h3>🌊 Anicca (Impermanence)</h3>
+                    <p><strong>Everything is constantly changing. Nothing is permanent or stable.</strong></p>
+                    <ul>
+                        <li>Atoms constantly changing</li>
+                        <li>Thoughts arising and ceasing</li>
+                        <li>Possessions deteriorating</li>
+                        <li>Relationships transforming</li>
+                        <li>Life stages passing (birth to death)</li>
+                        <li>Even your identity not fixed</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-style: italic; color: #9D84B7; font-weight: 600;">Understanding impermanence brings freedom—don't cling to what passes.</p>
+                </div>
+
+                <div class="card">
+                    <h3>😢 Dukkha (Unsatisfactoriness)</h3>
+                    <p><strong>Pleasure doesn't last. Satisfaction is temporary because of impermanence.</strong></p>
+                    <ul>
+                        <li>Pleasant moments always end</li>
+                        <li>Getting what you want brings new problems</li>
+                        <li>Success is never enough</li>
+                        <li>Relationships always involve loss</li>
+                        <li>Possessions bring responsibility</li>
+                        <li>Even happiness is unsatisfactory</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-style: italic; color: #9D84B7; font-weight: 600;">This isn't pessimism—it's clarity on how to reduce suffering.</p>
+                </div>
+
+                <div class="card">
+                    <h3>🔮 Anatta (Not-Self)</h3>
+                    <p><strong>There is no permanent, unchanging "I" or soul. What we call "self" is constantly changing.</strong></p>
+                    <ul>
+                        <li>No unchanging consciousness persists</li>
+                        <li>Body changes (growth, decay, death)</li>
+                        <li>Feelings and emotions are temporary</li>
+                        <li>Thoughts arise without "I" deciding</li>
+                        <li>Personality changes over time</li>
+                        <li>Clinging to ego-self causes suffering</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-style: italic; color: #9D84B7; font-weight: 600;">Freedom comes from releasing ego attachment and illusion.</p>
+                </div>
+            </div>
+
+            <div class="quote">
+                "Do not believe anything merely because I have said it. Do not accept what you read in books. But when you know for yourselves that these things are bad, abandoning them, then do you give them up."
+                <div class="quote-author">— Buddha (Kalama Sutta)</div>
+            </div>
+
+            <h3 style="font-size: 2rem; color: #9D84B7; margin: 2.5rem 0; font-weight: 700;">🌟 Buddha's Key Teachings</h3>
+
+            <div class="content-grid">
+                <div class="card">
+                    <h3>⚖️ The Middle Way</h3>
+                    <p>Avoid extremes. Balance is the path to enlightenment.</p>
+                    <ul>
+                        <li>Not excessive sensuality or asceticism</li>
+                        <li>Not ignoring body or obsessing over it</li>
+                        <li>Not spiritual bypassing or pure materialism</li>
+                        <li>Sustainable, balanced living</li>
+                        <li>Moderation in all things is key</li>
+                        <li>Balance work, rest, family, spirituality</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>❤️ Metta (Loving-Kindness)</h3>
+                    <p>Loving-kindness toward all beings, including yourself first.</p>
+                    <ul>
+                        <li>Love yourself first (essential)</li>
+                        <li>Extend to loved ones naturally</li>
+                        <li>Include neutral/indifferent people</li>
+                        <li>Even difficult people deserve compassion</li>
+                        <li>Gradually to all beings universally</li>
+                        <li>Boundless, unconditional love</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>🎯 Sati (Mindfulness)</h3>
+                    <p>Present moment awareness is the key to wisdom and peace.</p>
+                    <ul>
+                        <li>Be fully present in all activities</li>
+                        <li>Observe thoughts without judgment</li>
+                        <li>Notice emotions as they arise</li>
+                        <li>Eat mindfully, walk mindfully</li>
+                        <li>Life happens NOW, not in past/future</li>
+                        <li>Constant aware presence</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>🧠 Right Understanding</h3>
+                    <p>Wisdom comes from direct experience, not blind belief.</p>
+                    <ul>
+                        <li>Investigate reality yourself</li>
+                        <li>Don't accept dogma without testing</li>
+                        <li>Test teachings through practice</li>
+                        <li>Reason combined with experience</li>
+                        <li>Develop your own insights</li>
+                        <li>Trust your own realization</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>⚡ Karma (Intentional Action)</h3>
+                    <p>Your actions have consequences. What you do matters profoundly.</p>
+                    <ul>
+                        <li>Intention is everything</li>
+                        <li>Ethical actions create peace</li>
+                        <li>Harmful actions create suffering</li>
+                        <li>Past karma shapes present circumstances</li>
+                        <li>Future is shaped by today's choices</li>
+                        <li>You are responsible for your karma</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>🌐 Dependent Origination</h3>
+                    <p>Nothing exists in isolation. Everything is interconnected.</p>
+                    <ul>
+                        <li>All phenomena arise due to conditions</li>
+                        <li>Remove cause, effect ceases</li>
+                        <li>We are interdependent with all beings</li>
+                        <li>Actions affect entire ecosystem</li>
+                        <li>Everything is relationship</li>
+                        <li>No truly independent existence</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="font-size: 2rem; color: #9D84B7; margin: 2.5rem 0; font-weight: 700;">🕯️ The Five Precepts - Ethical Foundation</h3>
+
+            <div class="highlight">
+                <p style="margin-bottom: 1rem; font-size: 1.1rem;"><strong>Buddha's five ethical principles that reduce suffering:</strong></p>
+                <ol style="padding-left: 1.5rem; font-size: 1rem; line-height: 2;">
+                    <li><strong>Refrain from Killing</strong> - Respect all life, develop deep compassion for all beings</li>
+                    <li><strong>Refrain from Stealing</strong> - Take only what's given to you, develop integrity and honesty</li>
+                    <li><strong>Refrain from Sexual Misconduct</strong> - Respect, honesty, and non-harm in all relationships</li>
+                    <li><strong>Refrain from False Speech</strong> - Truthfulness, avoid gossip and lies, develop wisdom</li>
+                    <li><strong>Refrain from Intoxicants</strong> - Clarity of mind is essential for progress and enlightenment</li>
+                </ol>
+                <p style="margin-top: 2rem; font-style: italic; font-size: 1rem;">These aren't commandments or rules—they're practical guidance for reducing suffering in yourself and others. Follow out of understanding, not fear.</p>
+            </div>
+
+            <h3 style="font-size: 2rem; color: #9D84B7; margin: 2.5rem 0; font-weight: 700;">🌅 Daily Spiritual Practice</h3>
+
+            <div class="content-grid">
+                <div class="card">
+                    <h3>☀️ Morning Routine (25 min)</h3>
+                    <ul style="font-size: 0.95rem;">
+                        <li>🌅 5 min: Sit quietly, set intention for day</li>
+                        <li>🧘 10 min: Vipassana meditation</li>
+                        <li>📖 5 min: Read spiritual wisdom/quotes</li>
+                        <li>❤️ 3 min: Loving-kindness practice</li>
+                        <li>📝 2 min: Gratitude journaling</li>
+                    </ul>
+                    <p style="margin-top: 1rem; background: rgba(157,132,183,0.2); padding: 1rem; border-radius: 8px; color: #333; font-weight: 600;">Total: 25 minutes. Transforms your entire day.</p>
+                </div>
+
+                <div class="card">
+                    <h3>⏰ Throughout the Day</h3>
+                    <ul>
+                        <li>🎯 Pause hourly for mindful breathing</li>
+                        <li>🚶 Walk meditation during breaks</li>
+                        <li>🍽️ Eat mindfully, slowly, gratefully</li>
+                        <li>💬 Speak with intention and kindness</li>
+                        <li>🧠 Notice thoughts without judgment</li>
+                        <li>😤 Practice non-reaction to frustration</li>
+                        <li>🎁 Offer service to others</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>🌙 Evening Routine (20 min)</h3>
+                    <ul>
+                        <li>🧘 10 min: Vipassana meditation</li>
+                        <li>🔍 Reflection: What did I learn today?</li>
+                        <li>💭 Observe reactions and emotions</li>
+                        <li>🙏 Loving-kindness to all beings</li>
+                        <li>😌 Prepare mind for peaceful sleep</li>
+                        <li>💤 Sleep comes easily after practice</li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">Deep, restorative sleep follows spiritual practice.</p>
+                </div>
+            </div>
+
+            <div class="quote">
+                "Mindfulness is the path to the Deathless. Heedlessness is the path to death. The mindful do not die; the heedless are as if dead already."
+                <div class="quote-author">— Buddha (Dhammapada)</div>
+            </div>
+
+            <h3 style="font-size: 1.8rem; color: #9D84B7; margin: 2rem 0; font-weight: 700;">✨ Your 21-Day Spiritual Challenge</h3>
+
+            <div class="highlight">
+                <h4>Transform Your Inner Life in 3 Weeks:</h4>
+                <ul style="font-size: 1.05rem; line-height: 2;">
+                    <li><strong>Days 1-7:</strong> Morning meditation 5 minutes daily (consistency builds foundation)</li>
+                    <li><strong>Days 8-14:</strong> Increase to 10-minute meditation + evening practice</li>
+                    <li><strong>Days 15-21:</strong> Full morning routine (25 min) + mindfulness throughout day</li>
+                    <li><strong>After 21 days:</strong> Continue for 90 days to see deep transformation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== BOOKS SECTION ===================== -->
+    <div id="books" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"><span class="emoji">📚</span>COMPLETE BOOK RECOMMENDATIONS</h2>
+                <p class="section-subtitle">Curated reading list to transform your health, wealth, and consciousness</p>
+                <div class="divider"></div>
+            </div>
+
+            <h3 style="font-size: 2rem; color: #FF6B6B; margin: 2rem 0; font-weight: 700;">❤️ HEALTH & WELLNESS BOOKS</h3>
+
+            <div class="books-grid">
+                <div class="book-card">
+                    <span class="book-category book-health">Health</span>
+                    <div class="book-title">Atomic Habits</div>
+                    <div class="book-author">James Clear</div>
+                    <div class="book-description">Build tiny habits that compound into massive health transformations. Essential for creating sustainable lifestyle changes. Practical, actionable, life-changing.</div>
+                </div>
+
+                <div class="book-card">
+                    <span class="book-category book-health">Health</span>
+                    <div class="book-title">The Plant Paradox</div>
+                    <div class="book-author">Dr. Steven Gundry</div>
+                    <div class="book-description">Discover which foods heal and which harm your cardiovascular system. Based on cutting-edge research on lectins and nutritional healing.</div>
+                </div>
+
+                <div class="book-card">
+                    <span class="book-category book-health">Health</span>
+                    <div class="book-title">Why We Sleep</div>
+                    <div class="book-author">Matthew Walker</div>
+                    <div class="book-description">The science of sleep and its profound impact on heart health, mental clarity, weight, and longevity. Eye-opening research that changes how you sleep.</div>
+                </div>
+
+                <div class="book-card">
+                    <span class="book-category book-health">Health</span>
+                    <div class="book-title">How Not to Die</div>
+                    <div class="book-author">Dr. Michael Greger</div>
+                    <div class="book-description">Comprehensive guide to preventing the top 15 causes of premature death through nutrition and lifestyle. Evidence-based, practical, and inspiring.</div>
+                </div>
+
+                <div class="book-card">
+                    <span class="book-category book-health">Health</span>
+                    <div class="book-title">The Mind-Body Prescription</div>
+                    <div class="book-author">Dr. John E. Sarno</div>
+                    <div class="book-description">How stress and emotions directly impact physical health and disease. Revolutionary approach to healing chronic pain and illness.</div>
+                </div>
+
+                <div class="book-card">
+                    <span class="book-category book-health">Health</span>
+                    <div class="book-title">The Oxygen Advantage</div>
+                    <div class="book-author">Patrick McKeown</div>
+                    <div class="book-description">Breathing techniques to improve cardiovascular efficiency, reduce stress, and enhance physical performance. Simple but powerful health tool.</div>
+                </div>
+            </div>
+
+            <h3 style="font-size: 2rem; color: #4ECDC4; margin: 3rem 0 2rem; font-weight: 700;">💰 FINANCE & WEALTH BOOKS</h3>
+
+            <div class="books-grid">
+                <div class="book-card">
+                    <span class="book-category book-finance">Finance</span>
+                    <div class="book-title">The Intelligent Investor</div>
+                    <div class="book-author">Benjamin Graham</div>
+                    <div class="book-description">The bible of investing. Learn value investing, how to analyze stocks, and build long-term wealth. Essential foundation for every investor.</div>
+                </div>
+
+                <div class="book-card">
+                    <span class="book-category book-finance">Finance</span>
+                    <div class="book-title">A Random Walk Down Wall Street</div>
+                    <div class="book-author">Burton Malkiel</div>
+                    <div class="book-description">Why index funds beat active management. Scientific approach to investing that proves simplicity wins over complexity.</div>
+                </div>
+
+                <div class="book-card">
+                    <span class="book-category book-finance">Finance</span>
+                    <div class="book-title">The Little Book of Common Sense Investing</div>
+                    <div class="book-author">John C. Bogle</div>
+                    <div class="book-description">Simple, proven strategy: invest in low-cost index funds consistently. Why complexity fails, simplicity wins for 99% of investors.</div>
+                </div>
+
+                <div class="book-card">
+                    <span class="book-category book-finance">Finance</span>
+                    <div class="book-title">Rich Dad Poor Dad</div>
+                    <div class="book-author">Robert Kiyosaki</div>
+                    <div class="book-description">Financial mindset shift. Learn assets vs liabilities, passive income, and wealth-building principles. Life-changing for many.</div>
+                </div>
+
+                <div class="book-card">
+                    <span class="book-category book-finance">Finance</span>
+                    <div class="book-title">Money: Master the Game</div>
+                    <div class="book-author">Tony Robbins</div>
+                    <div class="book-description">Interviews with top investors. Investing psychology, strategies, and how to take control of your financial future. Motivational and practical.</div>
+                </div>
+
+                <div class="book-card">
+                    <span class="book-category book-finance">Finance</span>
+                    <div class="book-title">You Can Be a Stock Market Genius</div>
+                    <div class="book-author">Joel Greenblatt</div>
+                    <div class="book-description">Practical stock analysis techniques for identifying undervalued companies. Perfect for individual investors wanting to learn value investing.</div>
+                </div>
+            </div>
+
+            <h3 style="font-size: 2rem; color: #9D84B7; margin: 3rem 0 2rem; font-weight: 700;">🕉️ SPIRITUALITY & CONSCIOUSNESS BOOKS</h3>
+
+            <div class="books-grid">
+                <div class="book-card">
+                    <span class="book-category book-spirituality">Spirituality</span>
+                    <div class="book-title">The Dhammapada</div>
+                    <div class="book-author">Buddha (translated)</div>
+                    <div class="book-description">Essential Buddhist text with 423 verses of Buddha's teachings on ethics, mind, and enlightenment. Read one verse daily for profound insights.</div>
+                </div>
+
+                <div class="book-card">
+                    <span class="book-category book-spirituality">Spirituality</span>
+                    <div class="book-title">Mindfulness in Plain English</div>
+                    <div class="book-author">Bhante Gunaratana</div>
+                    <div class="book-description">Clear, practical guide to Vipassana meditation for beginners. Step-by-step instructions without mysticism. Best introductory book.</div>
+                </div>
+
+                <div class="book-card">
+                    <span class="book-category book-spirituality">Spirituality</span>
+                    <div class="book-title">The Art of Living</div>
+                    <div class="book-author">William Hart</div>
+                    <div class="book-description">Comprehensive guide to Vipassana meditation based on Goenka's teachings. Covers technique, benefits, and daily application details.</div>
+                </div>
+
+                <div class="book-card">
+                    <span class="book-category book-spirituality">Spirituality</span>
+                    <div class="book-title">Wherever You Go, There You Are</div>
+                    <div class="book-author">Jon Kabat-Zinn</div>
+                    <div class="book-description">Mindfulness in daily life. Practical, accessible, non-religious approach to meditation for modern, busy people.</div>
+                </div>
+
+                <div class="book-card">
+                    <span class="book-category book-spirituality">Spirituality</span>
+                    <div class="book-title">10% Happier</div>
+                    <div class="book-author">Dan Harris</div>
+                    <div class="book-description">Skeptical journalist becomes meditation advocate. Personal transformation story proving meditation's real, measurable impact on life.</div>
+                </div>
+
+                <div class="book-card">
+                    <span class="book-category book-spirituality">Spirituality</span>
+                    <div class="book-title">The Power of Now</div>
+                    <div class="book-author">Eckhart Tolle</div>
+                    <div class="book-description">Present moment awareness as the key to peace and liberation. Blends Eastern wisdom with modern psychology beautifully.</div>
+                </div>
+
+                <div class="book-card">
+                    <span class="book-category book-spirituality">Spirituality</span>
+                    <div class="book-title">What the Buddha Taught</div>
+                    <div class="book-author">Walpola Rahula</div>
+                    <div class="book-description">Scholarly yet accessible introduction to Buddhism. Explains core concepts, history, and practices clearly and comprehensively.</div>
+                </div>
+
+                <div class="book-card">
+                    <span class="book-category book-spirituality">Spirituality</span>
+                    <div class="book-title">The Book of Joy</div>
+                    <div class="book-author">Dalai Lama & Desmond Tutu</div>
+                    <div class="book-description">Two spiritual leaders discuss joy, suffering, and meaning. Inspiring, warm, and deeply wise conversation on lasting happiness.</div>
+                </div>
+            </div>
+
+            <h3 style="font-size: 2rem; color: #FFD93D; margin: 3rem 0 2rem; font-weight: 700;">⭐ BONUS: INTEGRATED BOOKS</h3>
+
+            <div class="books-grid">
+                <div class="book-card">
+                    <span class="book-category book-health">Multi-topic</span>
+                    <div class="book-title">Educated</div>
+                    <div class="book-author">Tara Westover</div>
+                    <div class="book-description">Memoir of education journey from survivalism to enlightenment. Inspiring story of transformation through learning and self-discovery.</div>
+                </div>
+
+                <div class="book-card">
+                    <span class="book-category book-finance">Multi-topic</span>
+                    <div class="book-title">Thinking Fast and Slow</div>
+                    <div class="book-author">Daniel Kahneman</div>
+                    <div class="book-description">Psychology of decision-making. Understanding biases helps in finances, health, and life choices. Nobel Prize winner's insights.</div>
+                </div>
+
+                <div class="book-card">
+                    <span class="book-category book-spirituality">Multi-topic</span>
+                    <div class="book-title">The Man Who Mistook His Wife for a Hat</div>
+                    <div class="book-author">Oliver Sacks</div>
+                    <div class="book-description">Fascinating neurology stories that reveal nature of consciousness, perception, and identity. Bridges science and spirituality.</div>
+                </div>
+            </div>
+
+            <div class="quote">
+                "The more that you read, the more things you will know. The more that you learn, the more places you'll go. Reading is to the mind what exercise is to the body."
+                <div class="quote-author">— Dr. Seuss (adapted from Stephen King)</div>
+            </div>
+
+            <h3 style="font-size: 1.8rem; color: #FFD93D; margin: 2rem 0; font-weight: 700;">📖 Reading Challenge: 12 Books in 12 Months</h3>
+
+            <div class="highlight">
+                <h4>Recommended Reading Order:</h4>
+                <ul style="font-size: 1rem; line-height: 2;">
+                    <li><strong>Month 1:</strong> Atomic Habits (create discipline)</li>
+                    <li><strong>Month 2:</strong> Why We Sleep (health foundation)</li>
+                    <li><strong>Month 3:</strong> Mindfulness in Plain English (start meditation)</li>
+                    <li><strong>Month 4:</strong> The Intelligent Investor (finance basics)</li>
+                    <li><strong>Month 5:</strong> Rich Dad Poor Dad (wealth mindset)</li>
+                    <li><strong>Month 6:</strong> The Dhammapada (spiritual wisdom)</li>
+                    <li><strong>Month 7:</strong> How Not to Die (advanced health)</li>
+                    <li><strong>Month 8:</strong> A Random Walk Down Wall Street (investment strategy)</li>
+                    <li><strong>Month 9:</strong> The Power of Now (consciousness deepening)</li>
+                    <li><strong>Month 10:</strong> The Little Book of Common Sense Investing (wealth building)</li>
+                    <li><strong>Month 11:</strong> 10% Happier (meditation in practice)</li>
+                    <li><strong>Month 12:</strong> The Art of Living (advanced spirituality)</li>
+                </ul>
+                <p style="margin-top: 2rem; font-style: italic; font-size: 1rem; color: #333;">By the end, you'll have transformed your health, finances, and consciousness. This reading transforms lives! 📚✨</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p style="font-size: 1.1rem; margin-bottom: 1rem;">
+            <strong>🌟 Complete Wellness Guide © 2024</strong>
+        </p>
+        <p>
+            Research-based guidance for Health • Finance • Spirituality • Personal Growth
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.9;">
+            Disclaimer: Educational information only. Consult healthcare providers for medical decisions, financial advisors for investments, and experienced teachers for spiritual practice.
+        </p>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+                window.scrollTo(0, 0);
+            }
+        }
+    </script>
+</body>
+</html>
